@@ -1,0 +1,81 @@
+* {
+    text-align: center;
+    margin: 0;
+}
+
+body {
+    display: flex;
+    box-sizing:border-box;
+    flex-direction: column;
+    width: 100vw;
+    height: 100vh;
+    background-image: url('../images/wave.png');
+    background-repeat: no-repeat;
+}
+
+header {
+    display: flex;
+    height: 10%;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+#logo {
+    width: 60px;
+    height: 63px;
+    margin-left: 20%;
+}
+
+nav .menu {
+    text-decoration: none;
+    padding: 20px;
+    font-family:'Times New Roman', Times, serif;
+    font-style: normal;
+    font-weight: bolder;
+    font-size: 24px;
+    line-height: 28px;
+    letter-spacing: 0.6px;
+    color: #FFFFFF;
+}
+
+.menu:hover {
+    text-decoration: underline;
+}
+
+.main_wrap {
+    display: flex;
+    height: 70vh;
+    flex-flow: column nowrap;
+    align-items:  center;
+    padding: 5px;
+}
+
+h1 {
+    font-family: 'Raleway', Times, serif sans-serif;
+    font-style: normal;
+    font-weight: 800;
+    font-size: 150px;
+    line-height: 235px;
+    letter-spacing: 0.6px;
+    color: #0D302C;
+    border: solid 1px red;
+}
+
+h1:hover{
+    color: red;
+}
+
+#school {
+    font-family:'Times New Roman', Times, serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 28px;
+    letter-spacing: 0.6px;
+    color: #000000;
+    border: solid 1px red;
+}
+
+#school:hover {
+    background-color: hotpink;
+}
