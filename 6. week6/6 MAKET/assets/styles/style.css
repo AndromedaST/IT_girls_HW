@@ -1,0 +1,142 @@
+.container {
+  display: grid;
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  grid-template-columns: repeat(4, 1fr) 200px;
+  grid-template-rows: 1fr 3fr 2fr 1fr;
+  gap: 1rem;
+  text-align: center;
+}
+
+#logo {
+  width: 93px;
+  height: 35px;
+}
+
+.header {
+  grid-row: 1 / 2;
+  grid-column: 1 / 6;
+  display: flex;
+  align-items: center;
+  padding: 5%;
+  font-family:'Roboto', Courier, monospace;
+  font-style:normal;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 21px;
+}
+
+.menu {
+color:rgb(16, 146, 25);
+padding: 10pt;
+font: bolder;
+}
+
+button{
+  background-color: greenyellow;
+  font-family: 'Roboto', Courier, monospace;;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 21px;
+}
+
+button:hover {
+  text-decoration: underline;
+}
+
+.sidebar {
+  grid-row: 2 / 4;
+  grid-column: 5 / 6;
+  font-family:'Roboto', Courier, monospace;
+  color:rgb(16, 146, 25);
+}
+
+  .banner {
+    grid-row: 2 / 3;
+    grid-column: 1 / 5;
+    display: flex;
+    flex: column wrap;
+    justify-content: center;
+    background-image: url('../images/imagem.png');
+    box-shadow: -19px 0 22px -19px #000, 19px 0 22px -19px #000;
+    background-size:contain;
+    background-repeat: no-repeat;
+}
+
+  .discount{
+    align-self:last baseline;
+    margin-bottom: 5%;
+    color:rgb(16, 146, 25);
+    font: bolder;
+    font-size:20px;
+}
+
+  .discount:hover{
+    text-decoration: underline
+}
+
+.content{
+    display: flex;
+    flex: column wrap;
+    align-content: space-around;
+    background-size:contain;
+    background-repeat: no-repeat;
+    box-shadow: -19px 0 22px -19px #000, 19px 0 22px -19px #000;
+}
+
+.text{
+  margin-bottom: 2%;
+  color: blueviolet;
+  font: bolder;
+  font-size: bolder;
+  align-self: self-end;
+  justify-self: center;
+}
+
+.text:hover{
+  text-decoration: underline;
+}
+
+.cont1 {
+  grid-row: 3 / 4;
+  grid-column: 1 / 2;
+  background-image: url('../images/1.png');
+  }
+
+.cont2 {
+  grid-row: 3 / 4;
+  grid-column: 2 / 3;
+  background-image: url('../images/2.png');
+}
+
+.cont3 {
+  grid-row: 3 / 4;
+  grid-column: 3 / 4;
+  background-image: url('../images/3.png');
+}
+
+.cont4 {
+  grid-row: 3 / 4;
+  grid-column: 4 / 5;
+  background-image: url('../images/4.png');
+}
+
+.footer {
+  grid-row: 4 / 5;
+  grid-column: 1 / 6;
+  background-color: dimgray;
+  text-decoration: aliceblue;
+}
+
+.f_element{
+  color: white;
+  padding: 5%;
+  align-self: center;
+  text-decoration: none;
+}
+
+.f_element:hover{
+  text-decoration: underline;
+}
