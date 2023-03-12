@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AWD</title>
+<style>
+* {
+    text-align: center;
+    font-size: 3vw;
+}
+
+.header{
+    background: darkgray;
+    grid-area: header;
+}
+
+.sidebar{
+    background: lightgreen;
+    grid-area: sidebar;
+}
+
+.main{
+    background: bisque;
+    grid-area: main;
+}
+
+.element{
+    background: white;
+    grid-area: el;
+}
+
+.f_element{
+    background: white;
+    grid-area: fel;
+}
+
+@media screen and (max-width: 480px) {
+    .footer {
+        display: none;
+    }
+
+    .container{
+        display: flex ;
+        flex-direction: column;
+    }
+
+    .header{
+        height: 30vh;
+    }
+
+    .sidebar{
+        height: 30vh;
+    }
+
+    .main{
+        height: 30vh;
+    }
+
+    .el1,
+    .el2,
+    .el3 {
+        height: 30%;
+        margin: 2%;
+    }
+}
+
+@media screen and (min-width: 481px) and (max-width:768px) {
+    .footer {
+        display: none;
+    }
+
+    .container{
+        display: grid;
+        height: 90vh;
+        width: 100vw;
+        grid-template-columns: 60% 1fr;
+        grid-template-rows: 30% 1fr;
+        grid-template-areas:
+        "header header "
+        "main sidebar";
+        font-size: 3vw;
+        }
+
+    .el1,
+    .el2,
+    .el3 {
+        height: 30%;
+        margin: 2%;
+    }
+}
+
+
+@media screen and (min-width: 769px) {
+    .container {
+        height: 90vh;
+        width: 100vw;
+    }
+
+    .header {
+        grid-column: 1/4;
+    }
+
+    .main {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: repeat(4, 1fr);
+        grid-gap: 0.5em;
+        justify-content: space-around;
+        padding: 0.5em;
+    }
+
+    .element{
+        background-color: white;
+    }
+
+    .el1{
+        grid-area: 3/1/4/2;
+    }
+
+    .el2{
+        grid-area: 3/2/4/3;
+    }
+
+    .el3{
+        grid-area: 4/1/4/3;
+    }
+
+    .sidebar {
+        background-color:lightgreen;
+    }
+
+    .footer {
+        grid-column: 1/4;
+        display: flex;
+        background-color: darkgray;
+        justify-content: space-around;
+        padding: 0.5em;
+    }
+}
+</style>
+</head>
+
+<body>
+<h1>Adaptive Design (AWD)</h1>
+<div class="container">
+    <header class="header">[ШАПКА СТРАНИЦЫ]</header>
+    <main class="main">[ОСНОВНАЯ ЧАСТЬ]
+        <div class="element el1">[Еще 1]</div>
+        <div class="element el2">[Еще 2]</div>
+        <div class="element el3">[Еще 3]</div>
+    </main>
+    <aside class="sidebar">[Боковая часть]</aside>
+    <footer class="footer">
+        <div class="f_element fel1">[Секция футера 1]</div>
+        <div class="f_element fel2">[Секция футера 2]</div>
+        <div class="f_element fel3">[Секция футера 3]</div>
+        <div class="f_element fel4">[Секция футера 4]</div>
+    </footer>
+</div>
+</body>
+</html>
