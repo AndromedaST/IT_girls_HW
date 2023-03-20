@@ -1,0 +1,84 @@
+.about__body {
+    max-width: 1440px;
+    margin: 0px auto;
+}
+
+.about__header {
+    max-width: 1200px;
+    margin: 0px auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+.about__logo{
+    max-height: 2%;
+    left: 76px;
+    top: 89px;
+}
+
+title {
+    font-family:Arial, Helvetica, sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 60px;
+    line-height: 120%;
+    color: #000000;
+    position: relative;
+    text-align: center;
+}
+
+.about__button{
+    left: 0%;
+    right: 0%;
+    top: 0%;
+    bottom: 0%;
+    background: #5222D0;
+    border-radius: 100px;
+    font-family: 'Intro ';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 13px;
+    color: #FFFFFF;
+}
+
+.about__table {
+    display:flex;
+    flex-flow: row wrap;
+}
+
+.about__col{
+    width: 33%;
+}
+
+.item-about {
+    height: 40%;
+}
+.item-about__icon{
+max-width: 90%;
+
+}
+.item-about__title {
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 30px;
+    line-height: 120%;
+}
+
+.item-about__text {
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 20px;
+    line-height: 160%;
+}
+
+.news {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: stretch;
+    background: #EC615B;
+    color: white;
+}
