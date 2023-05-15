@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="pic">
+      <img src="" />
+    </div>
+
+    <button data-src="cat1">Previous</button>
+
+    <button data-src="cat2">Next</button>
+    <script>
+      document.body.addEventListener("click", (e) => {
+        if (!e.target.matches("button")) return;
+        document.querySelector(".pic img").src = "cat1.jpg";
+
+        document
+          .querySelectorAll("button")
+          .forEach((btn) => btn.classList.remove("active"));
+        e.target.classList.add("active");
+      });
+    </script>
+  </body>
+</html>
