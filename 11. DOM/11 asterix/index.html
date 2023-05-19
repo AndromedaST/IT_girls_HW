@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Square calculation</title>
+  </head>
+  <body>
+    <h1>FORM</h1>
+    <label for="Numbers">Введите цифры:</label>
+    <br />
+    <input type="number" id="numbers" placeholder="ввод только цифр!" />
+    <p></p>
+    <label for="square">Квадрат числа равен:</label>
+    <br />
+    <input type="number" id="square" placeholder="автоматически" disabled />
+    <p></p>
+    <button onclick="square()">Вычислить квадрат числа</button>
+    <script>
+      function square() {
+        num = document.querySelector("#numbers").value;
+        console.log(num);
+        num2 = (+num) ** 2;
+        console.log(num2);
+        document.getElementById("square").value = num2;
+      }
+    </script>
+  </body>
+</html>
