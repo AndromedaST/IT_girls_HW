@@ -18,9 +18,12 @@ function showImage(src) {
 }
 
 function checkSpam(str) {
-    let strToLower = str.toLowerCase();
-    let pattern = /виагра/gi;
-    return strToLower.replace(pattern, "***");
+        str = str.toLowerCase(str);
+        newstr = str.replace(/виагра/gi, '***');
+        newstr = newstr.replace(/ххх/gi, '***');
+        newstr = newstr.replace (/порно/gi, '***');
+        newstr = newstr[0].toUpperCase() + newstr.slice(1).toLowerCase();
+        return newstr;
 }
 
 let FIO = document.querySelector("#FIO");
@@ -41,9 +44,8 @@ button.addEventListener("click", () => {
     showImage(avatar.value);
     avatar.value = null;
     let txt1 = checkSpam(txt.value);
-    chattxt.textContent = txt1
-
-
+    chattxt.textContent = txt1;
+    txt.value = null;
 });
 
 
