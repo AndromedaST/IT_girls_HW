@@ -1,5 +1,7 @@
+
+let str;
 function formatName(str) {
-    let result = str.trim();
+    let result = str.trim().replace(/\s{2,}/gm," ")
     if (result === "") {
         return "Аноним";
     }
@@ -10,54 +12,81 @@ function formatName(str) {
     return arr.join(" ");
 }
 
+function checkSpam(spam) {
+    let result = spam.replace(/виагра|ххх|порно|viagra/gi, "***");
+    return result[0].toUpperCase() + result.slice(1).toLowerCase();
+}
+
+
+
+// function createContent (content) {
+// const p = document.createElement ('p');
+// p.textContent = content;
+// const container = document.getElementById("main__output");
+// container.append(p)
+// }
+
+
+// function CreateUIMessage (inpName, imagelink, text) {
+// let UIname = formatName(inpName);
+// let UIText = checkSpam(text);
+// let UIImage = showImage(image);
+// createContent (UIName);
+// createContent (UIText);
+// createContent (UIImage);
+// }
+
+const inpName = document.querySelector("#name");
+const imagelink = document.querySelector("#imagelink");
+const text = document.querySelector("#text");
+
+
+const UIImage = document.querySelector("#chat__avatar");
+const UIName = document.querySelector("#chat__FIO");
+const UIText = document.querySelector("#chattxt");
+const button = document.querySelector("#submitbtn");
+const formUser = document.getElementById("form");
+
+const date = document.getElementById('date');
+
+const yes = document.getElementById('yes');
+const no = document.getElementById('no');
+
+const supportArray = [
+"https://cdn-icons-png.flaticon.com/256/10993/10993398.png",
+"https://cdn-icons-png.flaticon.com/256/4213/4213735.png",
+"https://cdn-icons-png.flaticon.com/256/4213/4213736.png",
+"https://cdn-icons-png.flaticon.com/256/4213/4213732.png",
+"https://cdn-icons-png.flaticon.com/256/4213/4213641.png",
+"https://cdn-icons-png.flaticon.com/256/4213/4213646.png"
+];
+
+const RandomSrc = Math.floor(Math.random() * (supportArray.length-1));
 function showImage(src) {
     let image = document.createElement("img");
-    image.src = src;
+    if (src === ""){
+        image.src = supportArray[RandomSrc]
+    } else { image.src = src};
     const container = document.getElementById("chat__avatar");
     container.append(image);
 }
 
 
-function checkSpam(str) {
-    let newstr = str.replace(/виагра|ххх|порно|viagra/gi, "***");
-    return newstr[0].toUpperCase() + newstr.slice(1).toLowerCase();
-
-}
-
-function createContent (content) {
-const p = document.createElement ('p');
-p.textContent = content
-}
-
-
-const FIO = document.querySelector("#FIO");
-const chatFIO = document.querySelector("#chat__FIO");
-
-const avatar = document.querySelector("#avatar");
-const chatavatar = document.querySelector("#chat__avatar");
-
-const txt = document.querySelector("#txt");
-const chattxt = document.querySelector("#chattxt");
-
-const button = document.querySelector("#submitbtn");
-const formUser = document.getElementById('form')
-
 formUser.addEventListener("submit", (event) => {
     event.preventDefault();
 
-    
+if (yes.checked) {
+UIName.textContent = formatName(inpName.value)}
+else { UIName.textContent = "username"
+}
 
-    chatFIO.textContent = formatName(FIO.value);
+showImage(imagelink.value);
 
-    showImage(avatar.value);
 
-    chattxt.textContent = checkSpam(txt.value);
+UIText.textContent = checkSpam(text.value);
+date.textContent = new Date()
 
-    console.log(FIO.value);
-    formUser.reset()
+formUser.reset()
 });
 
-
-
-
-
+console.log(UIName.textContent)

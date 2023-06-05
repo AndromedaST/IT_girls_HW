@@ -36,24 +36,20 @@ button {
     display: flex;
     flex-direction: column;
     flex-grow: 1;
-    border: solid 1pt blue;
+
 }
 
 #userdata {
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: space-between;
 }
 
 #chat__avatar {
-    max-width: 50%;
-    height: auto;
+    width: 5vw;
     object-fit: contain;
 }
 
 #chat__FIO {
-    max-width: 50%;
-    border: solid 1pt blue;
-
-
+    max-width: 5vw;
 }

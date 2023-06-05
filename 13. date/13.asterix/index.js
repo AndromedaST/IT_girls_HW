@@ -1,10 +1,11 @@
-let str = '<div id="task">Задание под звездочкой<br> Напишите <a href="link"> функцию</a> которая возвращает строку очищенную от всех тегов</div>'
 
-function deleteTags(str) {
-    let regex = /( |<([^>]+)>)/ig,
-    result = str.replace(regex, "");
-    return result;
+
+function formatDate(date) {
+if (date <= new Date - 1) {console.log("right now")}
+    else if (date <= new Date - 60*1000) {console.log((Date.parce(new Date) - Date.parce(date)) + "secs ago")}
+else if (date <= new Date - 60*60*1000) {console.log((Date.parce(new Date) - Date.parce(date)) + "mins ago")}
+else {console.log("yesterday date")}
 }
-console.log("строка с тэгами:",str);
-console.log("строка без тэгов:",deleteTags(str));
 
+date = '2023-05-05T23:30:25';
+console.log(1,formatDate(date))
