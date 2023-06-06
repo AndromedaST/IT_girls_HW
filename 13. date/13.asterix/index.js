@@ -1,11 +1,43 @@
 
 
 function formatDate(date) {
-if (date <= new Date - 1) {console.log("right now")}
-    else if (date <= new Date - 60*1000) {console.log((Date.parce(new Date) - Date.parce(date)) + "secs ago")}
-else if (date <= new Date - 60*60*1000) {console.log((Date.parce(new Date) - Date.parce(date)) + "mins ago")}
-else {console.log("yesterday date")}
+    let delta = new Date() - date;
+
+// меньше 1 секунды
+if (delta < 1000) {
+    return 'прямо сейчас';
+}
+// получаем секунды
+let second = Math.floor(delta / 1000);
+
+if (sec < 60) {
+    return sec + ' сек. назад';
+}
+//получаем минуты
+let min = Math.floor(delta/ 60000);
+if (min < 60) {
+return min + ' мин. назад';
 }
 
-date = '2023-05-05T23:30:25';
-console.log(1,formatDate(date))
+
+let d = date;
+d = [
+    '0' + d.getDate(),
+    '0' + (d.getMonth() + 1),
+    '' + d.getFullYear(),
+    '0' + d.getHours(),
+    '0' + d.getMinutes()
+].map(component => component.slice(-2));
+
+
+return d.slice(0, 3).join('.') + ' ' + d.slice(3).join(':');
+}
+
+alert( formatDate(new Date(new Date - 1)) ); // "прямо сейчас"
+
+alert( formatDate(new Date(new Date - 30 * 1000)) ); // "30 сек. назад"
+
+alert( formatDate(new Date(new Date - 5 * 60 * 1000)) ); // "5 мин. назад"
+
+// вчерашняя дата вроде 31.12.2016, 20:00
+alert( formatDate(new Date(new Date - 86400 * 1000)) );
